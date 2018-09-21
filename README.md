@@ -36,9 +36,6 @@ RecyclerView为何在大厂还不够普及？因为他们ListView封装的足够
 
 ![点我查看效果图](provideradapter.gif)
 
-#### 五、作者
-
-* 鲁宇峰   邮箱：luyufengc@enn.cn
 
 #### License
 
