@@ -37,6 +37,7 @@ public class ProviderAdapter extends BaseAdapter {
         if (providers == null || providers.size() < 1) {
             throw new IllegalArgumentException("providers must not null or size < 1");
         }
+        //将所有模板添加进List
         for (Class<? extends IViewProvider> cl : providers) {
             IViewProvider provider = null;
             Exception illegalException = null;
@@ -64,11 +65,12 @@ public class ProviderAdapter extends BaseAdapter {
         if (itemBean.getViewProviderClass() == null) {
             throw new IllegalArgumentException(itemBean + " getViewProviderClass() return not null");
         }
-
-        IViewProvider viewProvider = getProvider(itemBean.getViewProviderClass());
+            //得到bean 所有bean中实现了getViewProviderClass方法，从此方法可获得对应的模板provider
+            IViewProvider viewProvider = getProvider(itemBean.getViewProviderClass());
         if (viewProvider == null) {
             throw new IllegalArgumentException(itemBean.getViewProviderClass().getName() + " provider not exist");
         }
+        //得到模板之后 直接调用模板实现的getItemView方法
         convertView = viewProvider.getItemView(mContext, convertView, mInflater, itemBean, position);
         return convertView;
     }
@@ -111,6 +113,8 @@ public class ProviderAdapter extends BaseAdapter {
 
     @Override
     public int getItemViewType(int position) {
+
+        //循环所有的模板，返回对应的ViewType
         if (itemBeanList == null || position < 0 || position >= itemBeanList.size()) {
             return 0;
         }
