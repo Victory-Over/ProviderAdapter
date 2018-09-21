@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:background="@mipmap/icon_headline" />
+
+    <com.oushangfeng.marqueelayout.MarqueeLayout
+        android:id="@+id/marquee_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        app:enableAlphaAnim="true"
+        app:enableScaleAnim="false"
+        app:orientation="up" />
+
+</LinearLayout>
