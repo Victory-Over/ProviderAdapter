@@ -1,3 +1,5 @@
+## ProviderAdapter 模板化开发
+
 #### 一、简介
 
 RecyclerView为何在大厂还不够普及？因为他们ListView封装的足够好！
